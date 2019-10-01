@@ -1,0 +1,9 @@
+export { RegistroAppPage } from './registro/registro'; 
+export { ModalProductoPage } from './components/modal-producto/modal-producto';
+export { DashboardPage } from './dashboard/dashboard';
+export { PagoQrPage } from './pago-qr/pago-qr';
+export { SoliRejectPage } from './soli-reject/soli-reject';
+export { productoPage } from './producto/producto'; 
+export { TranAcceptPage } from './tran-accept/tran-accept';
+export { HomePage } from "./home/home";
+export { ListProductPage } from "./list-product/list-product";

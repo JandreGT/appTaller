@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons right>
+      <!-- <button ion-button outline class="btn_salir" (click)="loguout()">Salir</button> -->
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container_box">
+    <div class="box_registro">
+      <ion-slides pager>
+        <ion-slide>
+          <h1>Nuevo Usuario</h1>
+          <p class="sub_titulo">Registrate en unos simples pasos.</p>
+
+          <form class="form_registro" #datosUsuario="ngForm" (ngSubmit)="registrarUsuario(datosUsuario)">
+            <label class="label_registro">Correo:</label>
+            <ion-item class="spd spi">
+              <ion-input type="email" class="input_registro" autocorrect="off" name="email" #emailUser="ngModel"
+                [(ngModel)]="userModel.email" pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" required></ion-input>
+            </ion-item>
+            <div class="alert_box" *ngIf="emailUser.dirty && emailUser?.errors?.required">
+              <p>Correo requerido.</p>
+            </div>
+            <div class="alert_box" *ngIf="emailUser?.errors?.pattern">
+              <p>Correo invalido</p>
+            </div>
+
+            <label class="label_registro">Contraseña:</label>
+            <ion-item class="spd spi">
+              <ion-input type="password" class="input_registro" autocorrect="off" name="passConfirm" #passConfirm="ngModel"
+                [(ngModel)]="userModel.password" required></ion-input>
+            </ion-item>
+            <div class="alert_box" *ngIf="passConfirm.dirty && passConfirm?.errors?.required">
+              <p>Confirmación requerida</p>
+            </div>
+
+            <div class="center_button">
+              <button ion-button class="btn_registroc mtop_bntc" [disabled]="userModel.invalid" type="submit">Registrar</button>
+            </div>
+          </form>
+        </ion-slide>
+
+        <ion-slide>
+            <h1>Registrado exitosamente.</h1>
+            <p class="sub_titulo">Ahora ya puede ingresar a la app.</p>
+            <div class="ico_espera"></div>
+
+            <div class="center_button">
+               <button ion-button class="btn_registroc mtop_bntc" (click)="ingresar()">Ingresar</button>
+            </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+</ion-content>

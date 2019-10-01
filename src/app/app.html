@@ -1,0 +1,52 @@
+<ion-menu class="menu_container" [content]="content">
+
+  <ion-content>
+
+    <div class="container_logom">
+      <p>HOLA</p>
+      <!-- <div class="mlogo"></div> -->
+    </div>
+
+    <ion-list class="container_menudistributy">
+      <div class="items_fstart">
+      <!-- <button ion-item class="icon ico_inicio" *ngFor="let p of pages" (click)="openPage(p)">
+         {{p.title}}
+      </button> -->
+
+      <button ion-item class="item_icon" (click)="listadoProductos()">
+         <ion-icon name="md-home" class="ico_menu_style"></ion-icon>
+         Inicio
+      </button>
+      
+      <button ion-item class="item_icon" (click)="irQR()">
+         <ion-icon name="qr-scanner" class="ico_menu_style"> </ion-icon>
+         Escanear QR
+      </button>
+     
+      <!-- <button ion-item class="item_icon" (click)="listadoProductos()">
+         <ion-icon name="md-list" class="ico_menu_style"> </ion-icon>
+         Mis productos
+      </button> -->
+      
+      <button ion-item class="item_icon" (click)="irNuevoProducto()">
+         <ion-icon name="md-camera" class="ico_menu_style"> </ion-icon>
+         Agregar Producto
+      </button>
+
+      <!-- <button ion-item class="icon ico_prod" (click)="irProductos()">
+         Productos
+      </button> -->
+      </div>
+
+      <div class="items_fend">
+         
+        <button ion-item class="item_icon" (click)="logout()">
+            <ion-icon name="md-log-out" class="ico_menu_style"> </ion-icon>
+            Salir
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

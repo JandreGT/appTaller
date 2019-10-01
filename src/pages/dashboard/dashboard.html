@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" padding>
+    <div class="container__butonhead">
+      <ion-buttons start>
+        <button ion-button icon-only (click)="mostrarMenu()">
+          <ion-icon name="menu" color="blanco"></ion-icon>
+        </button>
+      </ion-buttons>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <div class="ed-container full">
+      <div class="ed-item s-100">
+         <div class="card_dashboard" (click)="irVentas()">
+            <p>Total de producto 10</p>
+            <ion-spinner item-center name="dots" *ngIf="loading"></ion-spinner>
+            <h1 *ngIf="!loading">Q {{totalVentagtq | number:'.2-2'}}</h1>
+         </div>
+      </div>
+
+      <div class="ed-item s-100">
+         <div class="card_dashboard bg_tarjeta" (click)="irSquare('pos')">
+         <div class="ico_tarjetad"></div>
+         <h1>cliente</h1>
+         </div>
+      </div>
+
+   </div>
+</ion-content>
