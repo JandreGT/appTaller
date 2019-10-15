@@ -1,0 +1,99 @@
+page-vehiculo {
+
+  ion-content{
+    background: linear-gradient(to top, #232526, #414345); 
+    // background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+  } 
+
+  .titulo{
+    color: #fff;
+  }
+  .container_box {
+    float: left;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    top: -35px;
+  }
+
+  .form_pago {
+    float: left;
+    width: 100%;
+    margin-top: 35px;
+
+    .input_pago {
+       border-bottom: #999 solid 1px;
+       color: #2193b0;
+       padding: 0 10px; 
+    }
+    
+    .btn_container {
+       float: left;
+       width: 100%;
+       margin: 0 !important;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+       .btn_pago {
+          float: left;
+          width: 100%;
+          background: 424242;
+          color: #ddd;
+          font-size: 16px;
+          font-weight: bold;
+          font-family: $source;
+       }
+    }
+  }
+
+  .container_scan {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+      p {
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+      }
+
+      .btn_nuevo {
+        float: left;
+        width: 40%;
+        background: linear-gradient(90deg,#5477f0 0%,#6c64ee);
+        color: #fff;
+        font-size: 15px;
+        height: 40px;
+        border-radius: 5px;
+      }
+
+      .btn_scan {
+        float: left;
+        width: 70%;
+        background: #757575  ;
+        color: #fff;
+        font-size: 18px;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 12px;
+      }
+  }
+
+  .item-block {
+    padding: 10px !important;
+    background: transparent;
+
+    .label {
+      margin: 0 !important;
+    }
+  }
+
+}

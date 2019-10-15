@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="titulo">Datos del vehiculo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <div class="container_box">
+      
+      <form #formVehiculo="ngForm" class="form_pago" (ngSubmit)="setVehiculo()">
+
+         <ion-item> 
+            <ion-input type="text" autocorrect="on" class="input_pago"  name="placa" placeholder="Placa del carro"
+            [(ngModel)]="vehiculo.placa" required #placa="ngModel"></ion-input>
+         </ion-item>
+
+         <ion-item class="spd spi"> 
+            <ion-input type="text" class="input_pago" name="marca" placeholder="Marca" [(ngModel)]="vehiculo.marca" required #marca="ngModel"></ion-input>
+         </ion-item>
+         
+         <ion-item class="spd spi">
+            <ion-input type="text" class="input_pago" placeholder="Modelo" name="modelo" [(ngModel)]="vehiculo.modelo" required #modelo="ngModel"></ion-input>
+         </ion-item>
+
+         <ion-item class="spd spi">
+            <ion-input type="text" class="input_pago" placeholder="Color" name="color" [(ngModel)]="vehiculo.color" required #color="ngModel"></ion-input>
+         </ion-item>
+     
+         <ion-item class="spd spi">
+            <ion-input type="number" class="input_pago" placeholder="kilometraje" name="kilometraje" [(ngModel)]="vehiculo.kilometraje" required #kilometraje="ngModel"></ion-input>
+         </ion-item>
+
+         <ion-item>
+            <ion-textarea class="input_pago" placeholder="Trabajos a realizar" rows=3 name="trabajos" [(ngModel)]="vehiculo.trabajos" required></ion-textarea>
+         </ion-item>
+
+         <div class="container_scan">
+            <button ion-button class="btn_scan" [disabled]="formVehiculo.invalid" type="submit">Aceptar</button>
+         </div>          
+      </form>
+      
+   </div>
+</ion-content>

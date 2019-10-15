@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+     <ion-buttons right>
+        <!-- <button ion-button outline class="btn_salir" (click)="loguout()">Salir</button> -->
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container_box">
+     
+      <form #formCliente="ngForm" class="form_pago" (ngSubmit)="clienteCreate()">
+
+         <ion-item> 
+            <ion-label position="floating">Fecha:</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" min="2019-01-01" max="2025-12-09" ></ion-datetime>  
+         </ion-item>
+
+         <ion-item>  
+            <ion-input type="text" autocorrect="on" class="input_pago"  name="nombre" placeholder="Nombre del cliente"
+            [(ngModel)]="crearCliente.nombre" required #nombre="ngModel"></ion-input>
+         </ion-item>
+
+         <ion-item class="spd spi"> 
+            <ion-input type="number" class="input_pago" name="DPI" placeholder="DPI" [(ngModel)]="crearCliente.dpi" required #dpi="ngModel"></ion-input>
+         </ion-item>
+         
+         <ion-item class="spd spi">
+            <ion-input type="number" class="input_pago" placeholder="Telefono" name="telefono" [(ngModel)]="crearCliente.telefono" required #telefono="ngModel"></ion-input>
+         </ion-item>
+         
+         <ion-item>
+            <ion-textarea class="input_pago" placeholder="Direccion" rows=3 name="direccion" [(ngModel)]="crearCliente.direccion" required></ion-textarea>
+         </ion-item>
+
+
+         <ion-item *ngIf="imagePreview != ''">
+            <img [src]="imagePreview" class="img_preview">
+         </ion-item>
+
+         <div class="container_scan">
+            <a class="btn_scan" (click)="setVehiculo()">Agregar Vehiculo</a>
+         </div>
+         
+         <div class="container_scan">
+            <a class="btn_scan" (click)="getImage()">Foto</a>
+         </div>
+
+         <div class="container_scan">
+            <button ion-button class="btn_scan" [disabled]="formCliente.invalid" type="submit">Guardar</button>
+         </div>          
+      </form>
+   
+  </div>
+</ion-content>

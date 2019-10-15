@@ -3,7 +3,7 @@ import { Platform, Nav, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { HomePage, DashboardPage, productoPage, PagoQrPage, ListProductPage } from '../pages/index.page';
+import { HomePage, DashboardPage, productoPage, PagoQrPage, ListProductPage, ClientePage } from '../pages/index.page';
 import { Storage } from '@ionic/storage'; 
 
 @Component({
@@ -31,6 +31,8 @@ constructor(public platform: Platform, public statusBar: StatusBar, public splas
 }
 
    initializeApp() {
+
+      // this.rootPage = ListProductPage; return;
 
       this.platform.ready().then(() => {
 
@@ -61,10 +63,15 @@ constructor(public platform: Platform, public statusBar: StatusBar, public splas
       this.menuCtrl.close();
    }
    
-   listadoProductos() {
-      this.nav.push(ListProductPage);
+   nuevoCliente() {
+      this.nav.push(ClientePage);
       this.menuCtrl.close();
    }
+   
+   // listadoProductos() {
+   //    this.nav.push(ListProductPage);
+   //    this.menuCtrl.close();
+   // }
    
    reset() {
       this.menuCtrl.close(); 

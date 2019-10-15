@@ -9,17 +9,17 @@ import { FirebaseServiceProvider } from '../../providers/index.services';
 })
 export class ListProductPage {
 
-  misProductos:any =[]; 
+  misClientes:any =[]; 
   constructor(public navCtrl: NavController, public menuCtrl:MenuController, 
               public navParams: NavParams, public FirebaseServiceProvider:FirebaseServiceProvider) {
     
     //listado de productos
-    FirebaseServiceProvider.getProductos()
-      .subscribe(fruits=>{
-        this.misProductos = fruits;    
+    FirebaseServiceProvider.getClientes()
+      .subscribe(data=>{
+        this.misClientes = data;    
     });
 
-    // console.log(this.misProductos);    
+    // console.log(this.misClientes);    
   }
 
   ionViewDidLoad() {

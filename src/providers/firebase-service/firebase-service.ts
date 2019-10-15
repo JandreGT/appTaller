@@ -18,12 +18,17 @@ export class FirebaseServiceProvider {
       return this.afDB.list('/productos').valueChanges(); 
       //Esta función devolverá todos los datos que tengamos en el apartado productos, en nuestra base de datos
    }
-   public saveProducto(fruit){
-      let key = this.afDB.list('/productos').push(fruit).key;
+
+   public getClientes(){
+      return this.afDB.list('/clientes').valueChanges(); 
+      //Esta función devolverá todos los datos que tengamos en el apartado productos, en nuestra base de datos
+   }
+   public saveProducto(data){
+      let key = this.afDB.list('/clientes').push(data).key;
       //Guardamos el prouducto y obetenemos el id que firebase pone al nudulo de nuestro producto.
       //Al guardarse sin id nuestro producto, ahora la actualizamos con el id que firebase nos devuelve.
-      fruit.id = key;
-      return this.afDB.database.ref('productos/'+fruit.id).set(fruit);
+      data.id = key;
+      return this.afDB.database.ref('clientes/'+data.id).set(data);
    }
 
    public updateProducto(prod){

@@ -11,3 +11,5 @@ ejemplo para subir imagenes en firebase
 https://github.com/ionicthemes/ionic-firebase-image-upload/tree/master/src/pages
 
 https://www.youtube.com/watch?v=urFpUVjLw0Y
+
+https://cssgradient.io/gradient-backgrounds/

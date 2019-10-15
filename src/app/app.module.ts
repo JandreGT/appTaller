@@ -13,13 +13,13 @@ import { MyApp } from './app.component';
 import { 
    HomePage, 
    DashboardPage, 
-   TranAcceptPage,
+   vehiculoPage,
    productoPage, 
-   SoliRejectPage,
    PagoQrPage,
    ModalProductoPage, 
    RegistroAppPage,
-   ListProductPage
+   ListProductPage,
+   ClientePage
 } from '../pages/index.page'
 
 //Components
@@ -66,13 +66,13 @@ firebase.initializeApp(environment.firebase)
       MyApp, 
       HomePage, 
       DashboardPage, 
-      TranAcceptPage,
-      productoPage, 
-      SoliRejectPage,
+      vehiculoPage,
+      productoPage,  
       PagoQrPage, 
       ModalProductoPage, 
-      RegistroAppPage, 
+      RegistroAppPage,
       ListProductPage,
+      ClientePage,
       //components
       DetalleTransaccionComponent,
       ModalImageComponent
@@ -103,13 +103,13 @@ firebase.initializeApp(environment.firebase)
       MyApp,
       HomePage,
       DashboardPage, 
-      TranAcceptPage, 
-      productoPage, 
-      SoliRejectPage, 
+      vehiculoPage, 
+      productoPage,  
       PagoQrPage, 
       ModalProductoPage, 
       RegistroAppPage,  
       ListProductPage,
+      ClientePage,
       DetalleTransaccionComponent, 
       ModalImageComponent
    ],
