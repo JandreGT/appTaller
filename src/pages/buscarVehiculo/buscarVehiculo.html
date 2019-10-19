@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+     <ion-buttons right>
+        <!-- <button ion-button outline class="btn_salir" (click)="loguout()">Salir</button> -->
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container_box">
+     
+      <form #formBuscar="ngForm" class="form_pago" (ngSubmit)="buscar()">
+
+         <ion-item>  
+            <ion-input type="text" autocorrect="on" class="input_pago"  name="placa" placeholder="Placa del Vehiculo"
+            [(ngModel)]="vehiculo.placa" required #placa="ngModel"></ion-input>
+         </ion-item>
+
+         <div class="container_scan">
+            <button ion-button class="btn_scan" [disabled]="formBuscar.invalid" type="submit">buscar</button>
+         </div>          
+      </form>
+
+      <form #formCliente="ngForm" class="form_pago">
+
+         <ion-item> 
+            <ion-label position="floating">Fecha de ingreso:</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" min="2019-01-01" max="2025-12-09"name="fecha" [(ngModel)]="cliente.fecha" disabled></ion-datetime>  
+         </ion-item>
+
+         <ion-item>  
+            <ion-input type="text" autocorrect="on" class="input_pago"  name="nombre" placeholder="Nombre del cliente"
+            [(ngModel)]="cliente.nombre" disabled #nombre="ngModel"></ion-input>
+         </ion-item>
+         
+         <ion-item class="spd spi">
+            <ion-input type="number" class="input_pago" placeholder="Telefono" name="telefono" [(ngModel)]="cliente.telefono" disabled #telefono="ngModel"></ion-input>
+         </ion-item>
+         
+         <ion-item>
+            <ion-input class="input_pago" placeholder="Direccion" name="direccion" [(ngModel)]="cliente.direccion" disabled></ion-input>
+         </ion-item>
+         
+         <ion-item>
+            <ion-input class="input_pago" placeholder="Vehiculo" name="vehiculo" [(ngModel)]="cliente.marcaVehiculo" disabled></ion-input>
+         </ion-item>
+        
+         <ion-item>
+            <ion-textarea class="input_pago" placeholder="trabajos" name="trabajos" [(ngModel)]="cliente.trabajoVehiculo" cols=3 disabled></ion-textarea>
+         </ion-item>          
+      </form>
+    
+      <form #formTrabajo="ngForm" class="form_pago add-trabajo" (ngSubmit)="clienteUpdate()" *ngIf="crearMod.existe && cliente.terminado==0">
+         <ion-item> 
+            <ion-label position="center">DATOS A MODIFICAR</ion-label>
+         </ion-item>
+         <ion-item> 
+            <ion-label position="floating">Fecha:</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" min="2019-01-01" max="2025-12-09"name="fecha" [(ngModel)]="crearMod.fecha" disabled></ion-datetime>  
+         </ion-item>
+
+         <ion-item>  
+            <ion-label position="center">Trabajo terminado</ion-label>
+            <ion-select item-left [(ngModel)]="crearMod.terminado" name="trabajo">
+               <ion-option [value]="1">Si</ion-option>
+               <ion-option [value]="0">No</ion-option>
+            </ion-select>
+         </ion-item>
+         
+         <ion-item class="spd spi" *ngIf="crearMod.terminado==0">
+            <ion-input type="text" class="input_pago" placeholder="Trabajo pendiente" name="trabajop" [(ngModel)]="crearMod.trabajo" #trabajo="ngModel" required></ion-input>
+         </ion-item>
+        
+         <ion-item>
+            <ion-input class="input_pago" placeholder="presupuesto" name="presupuesto" [(ngModel)]="crearMod.presupuesto" required></ion-input>
+         </ion-item>
+
+         <div class="container_scan">
+            <button ion-button class="btn_scan" [disabled]="formTrabajo.invalid" type="submit">Guardar</button>
+         </div>          
+      </form>
+
+      <ion-item *ngIf="crearMod.existe && cliente.terminado==1" class="success"> 
+         <ion-label position="center">Estado: COMPLETADO</ion-label>
+      </ion-item>
+   
+  </div>
+</ion-content>

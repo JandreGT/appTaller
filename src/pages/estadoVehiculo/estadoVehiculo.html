@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+     <ion-buttons right>
+        <!-- <button ion-button outline class="btn_salir" (click)="loguout()">Salir</button> -->
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container_box">
+     
+      <form #formBuscar="ngForm" class="form_pago" (ngSubmit)="buscar()">
+
+         <ion-item>  
+            <ion-input type="text" autocorrect="on" class="input_pago"  name="placa" placeholder="Placa del Vehiculo"
+            [(ngModel)]="vehiculo.placa" required #placa="ngModel"></ion-input>
+         </ion-item>
+
+         <div class="container_scan">
+            <button ion-button class="btn_scan" [disabled]="formBuscar.invalid" type="submit">buscar</button>
+         </div>          
+      </form>
+   
+  </div>
+</ion-content>

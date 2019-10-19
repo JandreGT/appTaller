@@ -13,8 +13,8 @@
       <form #formCliente="ngForm" class="form_pago" (ngSubmit)="clienteCreate()">
 
          <ion-item> 
-            <ion-label position="floating">Fecha:</ion-label>
-            <ion-datetime displayFormat="DD/MM/YYYY" min="2019-01-01" max="2025-12-09" ></ion-datetime>  
+            <ion-label position="stacked">Fecha:</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" name="fecha" [(ngModel)]="crearCliente.fecha"></ion-datetime>
          </ion-item>
 
          <ion-item>  

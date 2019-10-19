@@ -1,0 +1,41 @@
+page-detalleVehiculo {
+
+  ion-content{
+    background: linear-gradient(to top, #232526, #414345); 
+    // background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+  } 
+
+  .scroll-content{
+    padding: 0px !important;
+  }
+
+  .separador{
+    padding: 0px;
+    min-height: 39px;
+    background-image: linear-gradient( 89deg,  rgba(189,0,0,1) -12.5%, rgba(228,86,0,1) 23.4%, rgba(248,161,0,1) 69.8%, rgba(255,242,2,1) 103.7% );
+    
+    p{
+      text-align: center;
+      color: #1f1f1f  !important;
+      padding: 10px;
+    }
+  }
+
+  .contenedor{
+    background: rgba(255, 255, 255, 0.8);
+    border: solid #fff 1px;
+    border-radius: 5px;
+    margin: 7px;
+
+    .contenido{
+      padding-top: 10px;
+
+      p{
+        color: #232323 !important;
+        line-height: 9px;
+        padding: 0px 0px 0px 21px;
+      }
+    }
+
+  }
+}

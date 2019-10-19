@@ -3,7 +3,7 @@ import { Platform, Nav, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { HomePage, DashboardPage, productoPage, PagoQrPage, ListProductPage, ClientePage } from '../pages/index.page';
+import { HomePage, DashboardPage, ListClientesPage, ClientePage,buscarVehiculoPage, estadoVehiculoPage } from '../pages/index.page';
 import { Storage } from '@ionic/storage'; 
 
 @Component({
@@ -13,7 +13,7 @@ export class MyApp {
 @ViewChild(Nav) nav: Nav;
  
 login = HomePage;
-dashboard = productoPage;
+dashboard = ListClientesPage;
 
 rootPage: any;
 
@@ -32,7 +32,7 @@ constructor(public platform: Platform, public statusBar: StatusBar, public splas
 
    initializeApp() {
 
-      // this.rootPage = ListProductPage; return;
+      // this.rootPage = ListClientesPage; return 0;
 
       this.platform.ready().then(() => {
 
@@ -47,31 +47,25 @@ constructor(public platform: Platform, public statusBar: StatusBar, public splas
       });
    }
 
-
-   irQR(){
-      this.nav.setRoot(PagoQrPage);
-      this.menuCtrl.close(); 
-   }
-
    openPage(page:any) {
       this.nav.setRoot(page.component);
       this.menuCtrl.close();  
-   }
-
-   irNuevoProducto() {
-      this.nav.push(productoPage);
-      this.menuCtrl.close();
    }
    
    nuevoCliente() {
       this.nav.push(ClientePage);
       this.menuCtrl.close();
    }
-   
-   // listadoProductos() {
-   //    this.nav.push(ListProductPage);
-   //    this.menuCtrl.close();
-   // }
+
+   actividadCliente() {
+      this.nav.push(buscarVehiculoPage);
+      this.menuCtrl.close();
+   }
+ 
+   estadoVehiculo() {
+      this.nav.push(estadoVehiculoPage);
+      this.menuCtrl.close();
+   }
    
    reset() {
       this.menuCtrl.close(); 

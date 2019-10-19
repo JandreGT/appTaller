@@ -30,11 +30,11 @@
                      <p>Tel: {{cliente.telefono}} </p>
                   </div>
                   <div class="">
-                     <p>{{ cliente.vehiculo.marca}} </p>
+                     <p>{{ cliente.vehiculo.marca }} </p>
                   </div>
                </div>
 
-               <div class="card_header">
+               <div class="card_header" (click)="verMas(cliente)">
                   <img *ngIf="cliente.imagen != ''" [src]="cliente.imagen">
                   <div class="bg_imageprod" *ngIf="cliente.imagen == ''"> {{ cliente.nombre | slice:0:1 }} </div>
                </div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, MenuController, AlertController, LoadingController,} from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 //Pages
-import { ListProductPage } from '../list-product/list-product';
+import { ListClientesPage } from '../list-clientes/list-clientes';
 import { RegistroAppPage } from '../registro/registro';
 //Providers
 import { AuthProvider } from '../../providers/auth/auth'; 
@@ -47,7 +47,7 @@ export class HomePage {
       this.AuthProvider.signInWithEmailAndPassword(this.userModel).then(result => {
 
          loading.dismiss();
-         this.navCtrl.setRoot(ListProductPage);
+         this.navCtrl.setRoot(ListClientesPage);
 
       }).catch(error => {
 

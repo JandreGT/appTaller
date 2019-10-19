@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="titulo">Detalle del cliente</ion-title>
+    <ion-buttons right>
+       <button ion-button outline class="btn_salir" (click)="setVehiculo()">atras</button>
+   </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+   <div class="container_box">
+      
+      <ion-col col-12 >
+
+         <div>
+            <img *ngIf="cliente.imagen != ''" [src]="cliente.imagen">
+            <div class="bg_imageprod" *ngIf="cliente.imagen == ''"> {{ cliente.nombre | slice:0:1 }} </div>
+         </div>
+
+         <div class="separador"> 
+            <p>DATOS DEL CLIENTE:</p>
+         </div>
+
+         <div class="contenedor">
+            <div class="contenido">
+               <p>Nombre: {{ cliente.nombre }}</p>
+               <p>Telefono: {{cliente.telefono}} </p>
+               <p>DPI: {{cliente.dpi}} </p>
+               <p>{{ cliente.vehiculo.marca}} </p>
+            </div>
+         </div>
+         
+         <div class="separador"> 
+            <p>DATOS DEL VEHICULO:</p>
+         </div>
+
+         <div class="contenedor">
+            <div class="contenido">
+               <p>{{ cliente.vehiculo.marca}} </p>
+               <p>Modelo: {{ cliente.vehiculo.modelo}} </p>
+               <p>Placa: {{ cliente.vehiculo.placa}} </p>
+               <p>Kilometraje: {{ cliente.vehiculo.kilometraje}} </p>
+            </div>
+         </div>
+
+         <div class="separador"> 
+            <p>REPARACIONES:</p>
+         </div>
+         <div class="card_title"> 
+            <p>{{ cliente.vehiculo.trabajos }}</p>
+         </div>
+    
+         <div class="card_title" *ngFor="let trabajo of cliente.add"> 
+            <p>{{ trabajo.trabajo }} {{ trabajo.presupuesto }}</p>
+         </div>
+
+      </ion-col>
+
+   </div>
+</ion-content>
