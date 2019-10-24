@@ -7,14 +7,7 @@ export const environment = {
 
   firebase: {
 
-    apiKey: "AIzaSyACVjfnMWvhd1PQGwzdCG8cohoVDJEObU0",
-    authDomain: "taller-e93fc.firebaseapp.com",
-    databaseURL: "https://taller-e93fc.firebaseio.com",
-    projectId: "taller-e93fc",
-    storageBucket: "taller-e93fc.appspot.com",
-    messagingSenderId: "763134277135",
-    appId: "1:763134277135:web:8b8f75c140736afbed157a",
-    measurementId: "G-922TF48KMR"
+
   }
 
 };
